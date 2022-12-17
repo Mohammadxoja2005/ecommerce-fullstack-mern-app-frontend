@@ -1,0 +1,38 @@
+.navbar {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F4F7FB;
+  padding: 10px 0;
+  margin-bottom: 31px;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+  max-width: 1278px;
+  display: flex; 
+} 
+
+.navbar_links {
+    margin-left: 49px; 
+    font-size: 14px;
+    font-family: jost-semibold;
+    text-transform: capitalize;
+    color: black;
+    font-weight: 500;
+    cursor: pointer
+} 
+
+.navbar_links:first-child{
+    margin-left: 0;
+}  
+
+.navbar_links_span {
+    color: white; 
+    background-color: #6F73EE; 
+    padding: 2px 8px;
+    border-radius: 300px;
+    margin-left: 7px;
+}
+
+

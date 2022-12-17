@@ -1,0 +1,56 @@
+.footer_media {
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #5D6C7B;
+    border-top: 1px solid #5D6C7B;
+    padding: 36px 0;
+    margin-bottom: 18px;
+} 
+
+.footer_apps_overall {
+    display: flex;
+    align-items: center;
+    gap: 59px;
+}  
+
+.footer_media_markets {
+    display: flex;
+    gap: 10px;
+}  
+
+.footer_social_info_container {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 16px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}  
+
+.footer_social_media {
+    display: flex;
+    gap: 10px;
+} 
+
+.footer_media_stores {
+    cursor: pointer;
+}
+
+.footer_social_info {
+    display: flex;
+    flex-direction: column;
+} 
+
+.footer_social_info_title {
+    font-size: 14px;
+    font-family: jost-semibold;
+    text-transform: capitalize;
+} 
+
+.footer_social_info_num {
+    color: #5D6C7B; 
+    font-size: 10px;
+    font-family: jost-regular; 
+}

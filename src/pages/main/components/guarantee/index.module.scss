@@ -1,0 +1,65 @@
+.gur {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 81px;
+}
+
+.container {
+  margin: auto;
+  max-width: 1278px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}  
+
+.gur_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+} 
+
+.gur_title {
+    font-family: jost-bold; 
+    font-size: 25px;
+    color: #282739; 
+    text-transform: uppercase;
+} 
+
+.gur_des {
+    font-family: jost-regular; 
+    font-size: 16px;
+    color: #282739; 
+    text-transform: lowercase;
+} 
+
+.gur_reviews {
+    display: flex; 
+    align-items: center;
+    border: 1px solid rgba(93, 108, 123, 0.1); 
+    border-radius: 5px;
+    padding: 10px 27px 10px 10px;
+} 
+
+.gur_logo {
+    background-color: #FC3F1D; 
+    padding: 14px 18px;
+    border-radius: 5px;
+} 
+
+.gur_com {
+    margin-left: 18px;
+}
+
+.gur_com_title {
+    color: #5D6C7B; 
+    font-family: jost-regular;
+    font-size: 12px;
+} 
+
+.gur_com_number {
+    font-size: 25px;
+    font-family: jost-bold;
+    color: #282739;
+}
+
+

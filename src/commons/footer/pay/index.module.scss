@@ -1,0 +1,52 @@
+.footer_pay {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.footer_pay_documents {
+    display: flex;
+    gap: 44px;
+} 
+
+.footer_documents_names {
+    font-size: 12px;
+    font-family: jost-regular;
+    color: #5D6C7B;
+    cursor: pointer; 
+} 
+
+.footer_talk {
+    display: flex;
+    align-items: center;
+    gap: 37px;
+}  
+
+.footer_payments {
+    display: flex;
+    gap: 4px;
+}
+
+.footer_payment_method {
+    cursor: pointer; 
+}
+
+.footer_chat_container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+} 
+
+.footer_chat_title {
+    font-size: 14px;
+    font-family: jost-regular;
+} 
+
+.footer_chat_img {
+    cursor: pointer; 
+} 
+
+.footer_chat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}

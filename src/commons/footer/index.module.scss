@@ -1,0 +1,128 @@
+.footer {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 110px;
+  background-color: #F4F7FB;
+  padding: 46px 0 23px 0;
+}
+
+.container {
+  max-width: 1278px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_info_container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 49px;
+}
+
+.footer_title {
+  font-family: jost-semibold;
+  color: #282739;
+  font-size: 18px;
+  margin-bottom: 17px;
+}
+
+.footer_links_container {
+  display: flex;
+  flex-direction: column;
+  // margin-left: 46px;
+
+}
+
+// .footer_links_container:last-child {
+//     margin-left: 46px;
+// }
+
+#move {
+  margin-left: 46px;
+}
+
+.footer_link {
+  list-style: none;
+  font-family: jost-regular;
+  font-size: 14px;
+  color: #5d6c7b;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.footer_link:last-child {
+  margin-bottom: 0;
+}
+
+.footer_links_controll {
+  display: flex;
+} 
+
+.footer_links_container {
+    display: flex;
+    flex-direction: column;
+} 
+
+.footer_contact_title_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_contact_n_call {
+  font-family: jost-semibold;
+  font-size: 12px;
+  color: #6f73ee;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.footer_contact_call {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 28px;
+} 
+
+.footer_contact_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_contact_title {
+  color: #282739;
+  font-family: jost-regular;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.footer_contact_number {
+  font-family: jost-semibold;
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+
+.footer_contact_schedule {
+  font-family: jost-regular;
+  font-size: 12px;
+  color: #33404d;
+} 
+
+.footer_contact_add_container {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}  
+
+.footer_contact_info_add {
+    font-family: jost-regular;
+    font-size: 14px;
+    max-width: 164px;
+    margin-bottom: 8px;
+} 
+
+.footer_contact_phone {
+    color: #5D6C7B; 
+    font-family: jost-regular;
+    font-size: 12px;
+}
+
+
