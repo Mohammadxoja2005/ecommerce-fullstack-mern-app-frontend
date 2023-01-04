@@ -8,21 +8,19 @@ import Carousel from 'nuka-carousel';
 
 const SLIDER: FC = () => {
   let [current, setCurrent] = useState<number>(0);
-  let [transformNumber, setTransformNumber] = useState<number>(0);  
-// () => setCurrent(current == 0 ? current = 0 : current - 1) 
-// () => setCurrent(current == 2 ? current = 0 : current + 1)
-  const container = useRef<HTMLDivElement>(null); 
-  console.log(transformNumber)
+  let [transformNumber, setTransformNumber] = useState<number>(0);
+  // () => setCurrent(current == 0 ? current = 0 : current - 1) 
+  // () => setCurrent(current == 2 ? current = 0 : current + 1)
+  const container = useRef<HTMLDivElement>(null);
   // if(container.current != null) {
   //   console.log(container.current.clientWidth);  
   // }
-  console.log(current); 
   return (
     <div className={styles.slider}>
       <div className={styles.newclass}>
         {[1, 2, 3].slice(current, current + 1).map(value => {
           return (
-            <div className={styles.slider_img_back} ref={container} style={{transform: `translate3d(${transformNumber}px, 0, 0)`}}>
+            <div className={styles.slider_img_back} key={value} ref={container} style={{ transform: `translate3d(${transformNumber}px, 0, 0)` }}>
               <div className={styles.container}>
 
                 <div className={styles.slider_info}>
@@ -41,7 +39,7 @@ const SLIDER: FC = () => {
                       <p className={styles.slider_info_pagination_num}>3</p>
                     </div>
 
-                    <div className={styles.slider_info_btn_container} onClick={ () => setCurrent(current == 2 ? current = 0 : current + 1)}><img src={NEXT} alt="" /></div>
+                    <div className={styles.slider_info_btn_container} onClick={() => setCurrent(current == 2 ? current = 0 : current + 1)}><img src={NEXT} alt="" /></div>
                   </div>
 
                 </div>

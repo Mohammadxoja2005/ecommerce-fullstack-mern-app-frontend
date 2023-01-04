@@ -15,7 +15,6 @@ import TELEGRAM from "../../../assets/icons/telegram.png";
 
 const PAY: FC = () => {
 
-
     const paymentData = [
         {
             id: 1,

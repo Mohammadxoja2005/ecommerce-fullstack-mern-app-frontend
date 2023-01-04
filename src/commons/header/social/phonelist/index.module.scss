@@ -1,0 +1,45 @@
+.phone_list {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 10px 30px rgba(111, 115, 238, 0.1);
+    width: 247px; 
+    position: absolute;
+    z-index: 1;
+    right: 34px;
+    top: 36px;
+} 
+
+.phone_list_container {
+    display: flex;
+    flex-direction: column; 
+    border-bottom: 2px solid #EAEBED;
+    padding: 15px;
+    padding-left: 20px; 
+}   
+
+.phone_list_container:last-child {
+    border: none;
+}
+
+.phone_list_title {
+    color: #5D6C7B; 
+    font-size: 12px;
+    font-family: jost-regular;
+} 
+
+.phone_list_phone {
+    color: #282739;
+    font-family: jost-semibold;
+    font-size: 16px;
+} 
+
+.phone_list_schedule {
+    font-size: 12px;
+    color: #282739; 
+    font-family: jost-regular;
+}
+
+
+

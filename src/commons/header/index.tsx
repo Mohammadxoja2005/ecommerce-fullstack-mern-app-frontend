@@ -11,6 +11,8 @@ import SOCIAL from './social';
 import NAVBAR from './navbar';
 // styles
 import styles from "./index.module.scss";
+// helpers 
+import TOGGLE from '../../helpers/toggle';
 
 const HEADER: FC = () => {
   return (

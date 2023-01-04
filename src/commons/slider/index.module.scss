@@ -19,7 +19,7 @@
     margin: auto;
     border-radius: 10px; 
     animation: imgf 0.5s ease-in-out; 
-    transition: 0.5s;
+    transition: 1s;
     // transform: translate3d(-1368px, 0, 0);
 
 } 
@@ -27,10 +27,13 @@
 @keyframes imgf{
     0% {
         opacity: 0;
+        // transform: translate3d(0, 0, 0);
     } 
 
     100% {
-        opacity: 1;
+        opacity: 1; 
+        // transform: translate3d(-1368px, 0, 0);
+
     }
 }
 

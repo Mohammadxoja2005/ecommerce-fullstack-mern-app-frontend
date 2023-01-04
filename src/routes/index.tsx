@@ -1,13 +1,14 @@
-import {} from 'react'
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"; 
+import react from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MAIN from '../pages/main';
 
-const ROUTES = () =>  {
+const ROUTES = () => {
+
   return (
-    <Router> 
-        <Routes> 
-            <Route path='/' element={<MAIN/>}/>
-        </Routes>
+    <Router>
+      <Routes>
+        <Route path='/' element={<MAIN />} />
+      </Routes>
     </Router>
   )
 }
