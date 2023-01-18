@@ -1,5 +1,7 @@
-import { FC } from 'react'
+import { FC, useState } from 'react';
+// styles
 import styles from "./index.module.scss";
+// images
 import COMPARE from "../../assets/icons/compare.png";
 import SCOOTER_PRODUCT from "../../assets/images/scooter_product.png"
 import PREV_PRODUCT from "../../assets/icons/prev_product.png";
@@ -10,15 +12,20 @@ import TIMER from "../../assets/icons/timer.png";
 import MOL from "../../assets/icons/mol.png";
 import TRASH from "../../assets/icons/trash.png";
 import LIKE from "../../assets/icons/like.png";
+// utils 
+import FETCH from '../../utils/fetch';
+// id: number, title: string, price: number, power: string, speed: string, time: string, type_id: number, weight_id: number, amount: number, forwho_id: number, addpower: string
 
 const PRODUCTS: FC = () => {
+    const data: Array<any> = FETCH.POST(`${import.meta.env.VITE_URL}product/category?category_id=1&type_id=1`);
+    
     return (
         <div className={styles.products}>
             <div className={styles.container}>
                 <div className={styles.products_cart_control}>
-                    {[1, 2, 3, 4,5,6,7,8].map(() => {
+                    {data && data.map(value => {
                         return (
-                            <div className={styles.products_cart}>
+                            <div key={value.id} className={styles.products_cart}>
 
                                 <div className={styles.products_scooter}>
                                     <div className={styles.products_not} >
@@ -34,19 +41,19 @@ const PRODUCTS: FC = () => {
                                 </div>
 
                                 <div className={styles.products_cart_des}>
-                                    <h2 className={styles.products_cart_title}>Kugoo Kirin M4</h2>
+                                    <h2 className={styles.products_cart_title}>{value.title}</h2>
 
                                     <div className={styles.products_cart_char}>
-                                        <div className={styles.product_cart_container}><img src={ACC} /><p className={styles.product_cart_char_title}>2000 mAh</p></div>
-                                        <div className={styles.product_cart_container}><img src={MOL} /><p className={styles.product_cart_char_title}>1,2 л.с.</p></div>
-                                        <div className={styles.product_cart_container}><img src={SPEED} /><p className={styles.product_cart_char_title}>60 км/ч</p></div>
-                                        <div className={styles.product_cart_container}><img src={TIMER} /><p className={styles.product_cart_char_title}>5 часов</p></div>
+                                        <div className={styles.product_cart_container}><img src={ACC} /><p className={styles.product_cart_char_title}>{value.power}</p></div>
+                                        <div className={styles.product_cart_container}><img src={MOL} /><p className={styles.product_cart_char_title}>{value.addpower}</p></div>
+                                        <div className={styles.product_cart_container}><img src={SPEED} /><p className={styles.product_cart_char_title}>{value.speed}</p></div>
+                                        <div className={styles.product_cart_container}><img src={TIMER} /><p className={styles.product_cart_char_title}>{value.time}</p></div>
                                     </div>
 
                                     <div className={styles.products_cart_container}>
                                         <div className={styles.products_cart_price_container}>
                                             <p className={styles.products_cart_price_lined}>39 900 ₽</p>
-                                            <p className={styles.products_cart_price}>29 900 ₽</p>
+                                            <p className={styles.products_cart_price}>{value.price} ₽</p>
                                         </div>
                                         <div className={styles.products_cart_actions} >
                                             <div className={styles.products_cart_actions_container}><img className={styles.products_cart_action_img} src={TRASH} alt="" /></div>
@@ -63,7 +70,7 @@ const PRODUCTS: FC = () => {
 
                     }
                 </div>
-                    <div className={styles.products_btn_see_all}>Смотреть все</div>
+                <div className={styles.products_btn_see_all}>Смотреть все</div>
             </div>
         </div>
     )

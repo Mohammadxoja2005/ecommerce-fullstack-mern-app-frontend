@@ -1,0 +1,140 @@
+.basket {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  top: 45px;
+  z-index: 1;
+  width: 304px;
+  border-radius: 5px;
+  background-color: white;
+  // display: bloc;
+}
+
+.basket_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f7fb;
+  padding: 18px 19px;
+  border-radius: 5px 5px 0 0;
+}
+
+.basket_info_title {
+  font-size: 16px;
+  color: #282739;
+  font-family: jost-semibold;
+}
+
+.basket_amount {
+  color: #5d6c7b;
+  font-family: jost-regular;
+  font-size: 14px;
+}
+
+.basket_products_container {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    height: 202px;
+}
+
+.basket_product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  border-bottom: 2px solid #EAEBED;
+  padding: 15px 19px;
+  cursor: pointer;
+}  
+
+.basket_product_info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+} 
+
+.basket_product_infos {
+    display: flex;
+    align-items: center;
+}
+
+.basket_product_des {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// .basket_product_img_container {
+//     width: 54px;
+//     height: 40px;  
+// }  
+
+.basket_product_img {
+   width: 54px;
+   height: 50px;
+   aspect-ratio: 3/2;
+   object-fit: contain;  
+   border-radius: 50%;
+   background-color: #282739;
+}
+
+.basket_product_trash {
+  cursor: pointer;
+}
+
+.basket_product_title {
+  font-family: jost-semibold;
+  font-size: 14px;
+  color: #282739;
+}
+
+.basket_product_price {
+  font-size: 12px;
+  font-family: jost-regular;
+  color: #282739;
+}
+
+.basket_product_amount {
+  font-size: 12px;
+  color: #282739;
+  font-family: jost-regular;
+} 
+
+.basket_buy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 19px;
+}  
+
+.basket_buy_price {
+    display: flex;
+    flex-direction: column;
+} 
+
+.basket_buy_title {
+    color: #5D6C7B;
+    font-size: 12px;
+    font-family: jost-regular;
+} 
+
+.basket_buy_price {
+    font-size: 18px;
+    font-family: jost-semibold;
+} 
+
+.basket_buy_btn {
+    background-color: #6F73EE; 
+    border-radius: 5px;
+    padding: 10px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: jost-regular;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+

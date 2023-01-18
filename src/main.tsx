@@ -1,10 +1,29 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+// component
+import App from './App'; 
+// styles
+import './index.css';
+// features 
+import catalog from "./features/catalog";
+// redux-toolkit 
+import {combineReducers} from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
+// react-redux 
+import {Provider} from "react-redux"; 
+
+const reducer = combineReducers({
+  catalog: catalog
+})
+
+const store = configureStore({
+  reducer: reducer
+})
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App/>
+    </Provider>
   </React.StrictMode>
 )

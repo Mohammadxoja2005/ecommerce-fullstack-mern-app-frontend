@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import styles from "./index.module.scss";
 // images
 import ADD from "../../../assets/icons/add.png";
@@ -8,11 +8,12 @@ import WHATSAPP from "../../../assets/icons/whatsapp.png"
 // components
 import PHONELIST from './phonelist';
 // helpers 
-import TOGGLE from '../../../helpers/toggle';
+import USETOGGLE from '../../../helpers/useToggle';
 
 const SOCIAL: FC = () => {
-  const { RENDER, BTN} = TOGGLE(); 
-  
+
+  const [phoneListToggle, setPhoneListToggle] = USETOGGLE();
+
   return (
     <div className={styles.social}>
       <div className={styles.container}>
@@ -31,12 +32,10 @@ const SOCIAL: FC = () => {
 
         <div className={styles.social_connection} >
           <p className={styles.social_phone} >+7 (800) 505-54-61</p>
-          <BTN><img className={styles.social_connection_img} src={ADD} alt="" /></BTN>
+          <img onClick={setPhoneListToggle} className={styles.social_connection_img} src={ADD} alt="" />
         </div>
 
-        <RENDER>
-          <PHONELIST />
-        </RENDER>
+        {phoneListToggle ? <PHONELIST /> : null}
 
       </div>
     </div>

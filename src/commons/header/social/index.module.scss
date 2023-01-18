@@ -1,8 +1,7 @@
 .social {
   width: 100%;
   box-sizing: border-box;
-  padding: 10px 0;
-  position: relative;
+  padding: 10px 0; 
 }
 
 .container {
@@ -10,7 +9,8 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
-  max-width: 1278px;
+  max-width: 1278px;  
+  position: relative;
 }
 
 .social_links {

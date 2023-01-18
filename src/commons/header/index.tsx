@@ -5,16 +5,21 @@ import LOGO from "../../assets/icons/logo.png";
 import LIKE from "../../assets/icons/like.png";
 import COMPARE from "../../assets/icons/compare.png";
 import TRASH from "../../assets/icons/trash.png";
-import DOWN from "../../assets/icons/down.png"
+import DOWN from "../../assets/icons/down.png";
 // components
 import SOCIAL from './social';
 import NAVBAR from './navbar';
+import BASKET from './basket';
+import CATALOG from './catalog';
 // styles
 import styles from "./index.module.scss";
 // helpers 
-import TOGGLE from '../../helpers/toggle';
+import USETOGGLE from '../../helpers/useToggle';
 
 const HEADER: FC = () => {
+  const [toggleBasket, setToggleBasket] = USETOGGLE();
+  const [toggleCatalog, setToggleCatalog] = USETOGGLE();
+
   return (
     <Fragment>
       <SOCIAL />
@@ -24,10 +29,12 @@ const HEADER: FC = () => {
 
             <img className={styles.header_logo} src={LOGO} alt="" />
 
-            <div className={styles.header_catalog}>
+            <div onClick={setToggleCatalog} className={styles.header_catalog}>
               <div className={styles.header_catalog_lines}></div>
               <p className={styles.header_catalog_title}>Каталог</p>
             </div>
+
+            {toggleCatalog ? <CATALOG /> : null}
 
             <div className={styles.header_search_container}>
               <div className={styles.header_search_container_options}>
@@ -44,7 +51,6 @@ const HEADER: FC = () => {
               <div className={styles.header_searchbtn}>
                 <img className={styles.header_seatchbtn_img} src={SEARCH} alt="" />
               </div>
-
             </div>
 
           </div>
@@ -52,12 +58,14 @@ const HEADER: FC = () => {
           <div className={styles.header_navigations}>
             <div className={styles.header_navigation_container}><img className={styles.header_navigators} src={COMPARE} alt="" /></div>
             <div className={styles.header_navigation_container}><img className={styles.header_navigators} src={LIKE} alt="" /></div>
-            <div className={styles.header_navigation_container}><img className={styles.header_navigators} src={TRASH} alt="" /> <p className={styles.header_navigators_title} >Корзина</p></div>
+            <div onClick={setToggleBasket} className={styles.header_navigation_container}><img className={styles.header_navigators} src={TRASH} alt="" /> <p className={styles.header_navigators_title} >Корзина</p></div>
           </div>
 
+          {toggleBasket ? <BASKET /> : null}
+
         </div>
-      </div> 
-      <NAVBAR/>
+      </div>
+      <NAVBAR />
     </Fragment>
   )
 }
