@@ -14,7 +14,7 @@ import CATALOG from './catalog';
 // styles
 import styles from "./index.module.scss";
 // helpers 
-import USETOGGLE from '../../helpers/useToggle';
+import USETOGGLE from '../../utils/useToggle';
 
 const HEADER: FC = () => {
   const [toggleBasket, setToggleBasket] = USETOGGLE();

@@ -8,7 +8,7 @@ import WHATSAPP from "../../../assets/icons/whatsapp.png"
 // components
 import PHONELIST from './phonelist';
 // helpers 
-import USETOGGLE from '../../../helpers/useToggle';
+import USETOGGLE from '../../../utils/useToggle';
 
 const SOCIAL: FC = () => {
 

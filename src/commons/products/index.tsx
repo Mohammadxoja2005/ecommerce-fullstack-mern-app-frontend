@@ -14,11 +14,26 @@ import TRASH from "../../assets/icons/trash.png";
 import LIKE from "../../assets/icons/like.png";
 // utils 
 import FETCH from '../../utils/fetch';
-// id: number, title: string, price: number, power: string, speed: string, time: string, type_id: number, weight_id: number, amount: number, forwho_id: number, addpower: string
+// react-redux 
+import { useSelector } from "react-redux";
+
+interface productTypes {
+    id: number,
+    title: string,
+    power: string,
+    addpower: string,
+    speed: string,
+    time: string,
+    price: number
+}
 
 const PRODUCTS: FC = () => {
-    const data: Array<any> = FETCH.POST(`${import.meta.env.VITE_URL}product/category?category_id=1&type_id=1`);
-    
+    const data: Array<productTypes> = useSelector((state: any) => state.category.value);
+
+    const createBasketProduct = (productId: number) => {
+        FETCH.POST(`${import.meta.env.VITE_URL}/basket`, { basket_id: 1, product_id: productId });
+    }
+
     return (
         <div className={styles.products}>
             <div className={styles.container}>
@@ -26,9 +41,8 @@ const PRODUCTS: FC = () => {
                     {data && data.map(value => {
                         return (
                             <div key={value.id} className={styles.products_cart}>
-
                                 <div className={styles.products_scooter}>
-                                    <div className={styles.products_not} >
+                                    <div className={styles.products_not}>
                                         <div className={styles.products_hot}>ХИТ</div>
                                         <div className={styles.products_compare}><img src={COMPARE} /></div>
                                     </div>
@@ -56,19 +70,16 @@ const PRODUCTS: FC = () => {
                                             <p className={styles.products_cart_price}>{value.price} ₽</p>
                                         </div>
                                         <div className={styles.products_cart_actions} >
-                                            <div className={styles.products_cart_actions_container}><img className={styles.products_cart_action_img} src={TRASH} alt="" /></div>
+                                            <div onClick={() => createBasketProduct(value.id)} className={styles.products_cart_actions_container}><img className={styles.products_cart_action_img} src={TRASH} alt="" /></div>
                                             <div className={styles.products_cart_actions_container}><img className={styles.products_cart_action_img} src={LIKE} alt="" /></div>
                                         </div>
                                     </div>
 
                                     <div className={styles.product_cart_btn}>Купить в 1 клик</div>
                                 </div>
-
                             </div>
                         )
-                    })
-
-                    }
+                    })}
                 </div>
                 <div className={styles.products_btn_see_all}>Смотреть все</div>
             </div>

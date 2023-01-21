@@ -6,28 +6,22 @@ class FETCH {
     const [data, setData] = useState<Array<T>>([]);
 
     useEffect(() => {
-      try {
-        axios.get(url).then((value: any | JSON) => setData(value.data));
-      } catch (err) {
-        console.error(err);
-      }
+      axios.get(url)
+        .then((value: any | JSON) => setData(value.data))
+        .catch(error => console.log(error));
     }, []);
 
     return data;
   }
 
-  POST<T>(url: string, body?: object): Array<T> {
-    const [data, setData] = useState<Array<T>>([]);
-    
-    useEffect(() => {
-      try {
-        axios.post(url).then((value: any | JSON) => setData(value.data));
-      } catch (err) {
-        console.error(err);
-      }
-    }, []);
-
-    return data;
+  POST<T>(url: string, body?: object): Promise<Array<T>> {
+    return new Promise((resolve, reject) => {
+      // useEffect(() => {
+        axios.post(url, body)
+          .then((value: any | JSON) => resolve(value.data))
+          .catch(error => reject(error));
+      // }, [url])
+    })
   }
 }
 
