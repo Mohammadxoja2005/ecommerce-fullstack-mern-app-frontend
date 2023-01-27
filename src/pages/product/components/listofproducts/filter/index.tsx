@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 // styles
 import styles from "./index.module.scss";
 // images 
@@ -8,7 +8,7 @@ import FETCH from '../../../../../utils/fetch';
 
 const FILTER: FC = (): any => {
     const data: any = FETCH.GET(`${import.meta.env.VITE_URL}/operations/operations`);
-
+    const [bool, setBool] = useState<boolean>(false);
     const filterData: Array<{ id: number, name: string, arrOfCategory: Array<any> }> = [
         {
             id: 1,
@@ -31,20 +31,27 @@ const FILTER: FC = (): any => {
         const checkBox: any = document.querySelectorAll('[data-name="checkbox"]');
         const img: any = document.querySelectorAll('[data-img="img"]');
         const length: number = checkBox.length;
+        console.log(bool, "worked"); 
 
         for (let i = 0; i < length; ++i) {
             img[i].style.display = "none";
 
             checkBox[i].addEventListener('click', () => {
-                if (img[i].style.display == "none") {
+                if (img[i].style.display == "none") { 
                     img[i].style.display = "block";
                 } else if (img[i].style.display == "block") {
                     img[i].style.display = "none";
                 }
+                // img[i].style.display = "block" 
+
+                // if(img[i].style.display === "block") {
+                //     // img[i].style.display = "none";
+                //     console.log("clicked")
+                // } 
             })
         }
 
-    }, [data])
+    }, [data]) 
 
     return (
         <div className={styles.filter}>
@@ -70,7 +77,7 @@ const FILTER: FC = (): any => {
                         {v1.arrOfCategory && v1.arrOfCategory.map(v2 => {
                             return (
                                 <div key={v2.id} className={styles.filter_category_container}>
-                                    <div data-name="checkbox" className={styles.filter_category_checkbox}>
+                                    <div data-name="checkbox" onClick={() => setBool(!bool)} className={styles.filter_category_checkbox}>
                                         <img data-img="img" className={styles.filter_img} src={CHECK} alt="" />
                                     </div>
 
