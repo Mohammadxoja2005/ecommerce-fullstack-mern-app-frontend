@@ -33,7 +33,7 @@ const BASKET: FC = (): any => {
             </div>
 
             <div className={styles.basket_products_container}>
-                {/* {data && data.map(v1 => {
+                {data && data.map(v1 => {
                     return (
                         <Fragment key={v1.id}>
                             {v1.basket_products && v1.basket_products.map(v2 => {
@@ -58,7 +58,7 @@ const BASKET: FC = (): any => {
                     )
                 })
 
-                } */}
+                }
             </div>
 
             <div className={styles.basket_buy}>
