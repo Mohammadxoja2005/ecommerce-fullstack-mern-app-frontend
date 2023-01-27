@@ -5,6 +5,7 @@ import styles from "./index.module.scss";
 import { useSelector } from "react-redux";
 // commons
 import SINGLEPRODUCT from '../../../../commons/singleproduct';
+import { Link } from 'react-router-dom';
 
 interface productTypes {
     id: number,
@@ -29,7 +30,7 @@ const PRODUCTS: FC = () => {
                         )
                     })}
                 </div>
-                <div className={styles.products_btn_see_all}>Смотреть все</div>
+                <Link to="/products" className={styles.products_btn_see_all}>Смотреть все</Link>
             </div>
         </div>
     )
