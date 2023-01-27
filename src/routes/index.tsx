@@ -3,14 +3,13 @@ import MAIN from '../pages/main';
 import PRODUCT from '../pages/product';
 
 const ROUTES = () => {
-
   return (
-    <Router>
-      <HashRouter>
+    <HashRouter>
+      <Routes>
         <Route path='/' element={<MAIN />} />
         <Route path='/products' element={<PRODUCT />} />
-      </HashRouter>
-    </Router>
+      </Routes>
+    </HashRouter>
   )
 }
 
