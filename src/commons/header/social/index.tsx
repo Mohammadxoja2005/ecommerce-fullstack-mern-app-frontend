@@ -40,7 +40,7 @@ const SOCIAL: FC = (): any => {
           <img onClick={setPhoneListToggle} className={styles.social_connection_img} src={ADD} alt="" />
         </div>
 
-        {phoneListToggle ? <PHONELIST phoneListToggle={phoneListToggle} onClose={onClose} /> : null}
+        {phoneListToggle ? <PHONELIST /> : null}
 
       </div>
     </div>
