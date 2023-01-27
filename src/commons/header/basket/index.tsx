@@ -23,7 +23,7 @@ const BASKET: FC = (): any => {
 
     const productPrice: number = data[0].basket_products
         .reduce((accumulator, currentValue) => accumulator + currentValue.product.price, 0);
-
+    console.log("basket");
 
     return (
         <div className={styles.basket}>
