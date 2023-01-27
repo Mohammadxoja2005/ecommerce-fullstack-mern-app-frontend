@@ -66,7 +66,7 @@ const HEADER: FC = () => {
             <div onClick={setToggleBasket} className={styles.header_navigation_container}><img className={styles.header_navigators} src={TRASH} alt="" /> <p className={styles.header_navigators_title} >Корзина</p></div>
           </div>
 
-          {toggleBasket ? <CATALOG /> : null}
+          {toggleBasket ? <BASKET /> : null}
 
         </div>
       </div>
