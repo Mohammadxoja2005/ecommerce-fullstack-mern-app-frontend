@@ -1,0 +1,33 @@
+.products {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: auto;
+  max-width: 1278px;
+  display: grid;
+}
+
+.products_cart_control {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.products_btn_see_all {
+  border: 2px solid #6f73ee;
+  padding: 15px 25px;
+  color: #6f73ee;
+  font-family: jost-regular;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 142px;
+  margin: auto;
+  cursor: pointer;
+  border-radius: 5px;
+}

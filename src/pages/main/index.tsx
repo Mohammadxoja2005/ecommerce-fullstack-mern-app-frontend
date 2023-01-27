@@ -4,7 +4,7 @@ import HEADER from '../../commons/header';
 import SLIDER from '../../commons/slider';
 import GUARANTEE from './components/guarantee';
 import CATEGORY from './components/category';
-import PRODUCTS from '../../commons/products';
+import PRODUCTS from './components/products';
 import FOOTER from "../../commons/footer"; 
 
 const MAIN: FC = () => {

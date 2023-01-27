@@ -1,4 +1,4 @@
-import { FC, Fragment } from 'react'
+import { FC, Fragment, useRef } from 'react'
 // icons
 import SEARCH from "../../assets/icons/search.png";
 import LOGO from "../../assets/icons/logo.png";
@@ -13,17 +13,22 @@ import BASKET from './basket';
 import CATALOG from './catalog';
 // styles
 import styles from "./index.module.scss";
-// helpers 
+// helpers
 import USETOGGLE from '../../utils/useToggle';
+import USEOUTSIDETOGGLE from '../../utils/useOutsideClick';
 
 const HEADER: FC = () => {
-  const [toggleBasket, setToggleBasket] = USETOGGLE();
-  const [toggleCatalog, setToggleCatalog] = USETOGGLE();
+  const [toggleBasket, setToggleBasket, onCloseBasket] = USETOGGLE();
+  const [toggleCatalog, setToggleCatalog, onCloseCatalog] = USETOGGLE();
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  USEOUTSIDETOGGLE(headerRef, onCloseBasket);
+  USEOUTSIDETOGGLE(headerRef, onCloseCatalog);
 
   return (
     <Fragment>
       <SOCIAL />
-      <div className={styles.header}>
+      <div ref={headerRef} className={styles.header}>
         <div className={styles.container}>
           <div className={styles.header_searchbar}>
 

@@ -1,0 +1,84 @@
+.filter {
+  background-color: #f4f7fb;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+}
+
+.filter_name {
+  font-size: 18px;
+  font-family: jost-semibold;
+  margin-bottom: 17px;
+}
+
+.filter_price {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.filter_input_container {
+  display: flex;
+  align-items: center;
+}
+
+.filter_input_price {
+  width: 80px;
+  height: 35px;
+  text-align: center;
+  outline: none;
+  border: 1px solid #eaebed;
+  border-radius: 5px;
+  font-family: jost-regular;
+  font-size: 16px;
+}
+
+.filter_category_container {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.filter_category_container:last-child {
+  margin-bottom: 0;
+}
+
+.filter_category_checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #5d6c7b;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+// .filter_img_display {
+//   display: block;
+// }
+
+// .filter_img {
+//   display: none;
+// }
+
+.filter_category_title {
+  font-size: 14px;
+  font-family: jost-regular;
+  margin-left: 11px;
+}
+
+.filter_line {
+  width: 15px;
+  border: 1px solid #282739;
+  margin: 0 20px;
+}
+
+.filter_category {
+  margin-bottom: 27px;
+}
+
+.filter_category:last-child {
+  margin-bottom: 0;
+}

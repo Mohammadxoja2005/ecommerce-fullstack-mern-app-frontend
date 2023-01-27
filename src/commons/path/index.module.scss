@@ -1,0 +1,27 @@
+.path {
+    width: 100%; 
+    box-sizing: border-box;
+    margin-bottom: 22px;
+} 
+
+.container {
+    width: 100%;
+    max-width: 1278px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.path_names_containers {
+    display: flex;
+    gap: 10px;
+}
+
+.path_names {
+    color: #5D6C7B;
+    font-size: 12px;
+    font-family: jost-regular;
+    cursor: pointer;
+    text-decoration: none;
+}

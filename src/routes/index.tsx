@@ -1,6 +1,6 @@
-import react from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MAIN from '../pages/main';
+import PRODUCT from '../pages/product';
 
 const ROUTES = () => {
 
@@ -8,6 +8,7 @@ const ROUTES = () => {
     <Router>
       <Routes>
         <Route path='/' element={<MAIN />} />
+        <Route path='/products' element={<PRODUCT />} />
       </Routes>
     </Router>
   )

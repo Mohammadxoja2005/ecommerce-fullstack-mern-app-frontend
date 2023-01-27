@@ -1,0 +1,36 @@
+.sort {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+.sort_name_container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.sort_title {
+  font-family: jost-bold;
+  font-size: 25px;
+}
+
+.sort_img {
+  margin-left: 10px;
+}
+
+.sort_name {
+  color: #6f73ee;
+  font-family: jost-regular;
+  font-size: 12px;
+  border: 2px solid #6f73ee;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sort_name_title {
+  font-size: 14px;
+  font-family: jost-semibold;
+}

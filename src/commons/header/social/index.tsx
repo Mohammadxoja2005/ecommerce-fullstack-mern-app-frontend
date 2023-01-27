@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 import styles from "./index.module.scss";
 // images
 import ADD from "../../../assets/icons/add.png";
@@ -7,16 +7,21 @@ import MSG from "../../../assets/icons/msg.png";
 import WHATSAPP from "../../../assets/icons/whatsapp.png"
 // components
 import PHONELIST from './phonelist';
-// helpers 
+// utils 
 import USETOGGLE from '../../../utils/useToggle';
+import USEOUTSIDETOGGLE from '../../../utils/useOutsideClick';
 
-const SOCIAL: FC = () => {
+const SOCIAL: FC = (): any => {
+  const [phoneListToggle, setPhoneListToggle, onClose] = USETOGGLE();
+  const socialRef = useRef<HTMLDivElement>(null);
 
-  const [phoneListToggle, setPhoneListToggle] = USETOGGLE();
+  if (socialRef === null) return;
+
+  USEOUTSIDETOGGLE(socialRef, onClose);
 
   return (
     <div className={styles.social}>
-      <div className={styles.container}>
+      <div ref={socialRef} className={styles.container}>
         <div className={styles.social_links}>
           <ul className={styles.social_links_container} >
             <li className={styles.social_links_container_element}>Сервис</li>
@@ -30,16 +35,15 @@ const SOCIAL: FC = () => {
           </div>
         </div>
 
-        <div className={styles.social_connection} >
-          <p className={styles.social_phone} >+7 (800) 505-54-61</p>
+        <div className={styles.social_connection}>
+          <p className={styles.social_phone}>+7 (800) 505-54-61</p>
           <img onClick={setPhoneListToggle} className={styles.social_connection_img} src={ADD} alt="" />
         </div>
 
-        {phoneListToggle ? <PHONELIST /> : null}
+        {phoneListToggle ? <PHONELIST phoneListToggle={phoneListToggle} onClose={onClose} /> : null}
 
       </div>
     </div>
   )
 }
-
 export default SOCIAL; 

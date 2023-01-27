@@ -1,0 +1,15 @@
+.listofproducts {
+    width: 100%;
+    box-sizing: border-box;
+} 
+
+.container {
+    width: 100%;
+    max-width: 1278px;
+    margin: auto;
+} 
+
+.listofproducts_products_container {
+    display: flex;
+    align-items: flex-start;
+}

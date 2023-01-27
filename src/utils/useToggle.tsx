@@ -1,4 +1,4 @@
-import { useState, useCallback, FC } from "react";
+import { useState } from "react";
 
 // class useToggle {
 
@@ -22,14 +22,18 @@ import { useState, useCallback, FC } from "react";
 //   }
 // }
 
-const USETOGGLE = (initialState = false): [boolean, () => void] => {
+const USETOGGLE = (initialState = false): [boolean, () => void, () => void] => {
   const [value, setValue] = useState<boolean>(initialState);
-  
+
   const toggle = () => {
-    return setValue((state) => !state)
+    setValue(!value);
   };
 
-  return [value, toggle];
+  const onClose = () => {
+    setValue(false);
+  }
+
+  return [value, toggle, onClose];
 };
 
 export default USETOGGLE;

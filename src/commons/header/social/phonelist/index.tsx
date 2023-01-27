@@ -2,7 +2,6 @@ import { FC } from 'react'
 import styles from "./index.module.scss";
 
 const PHONELIST: FC = () => {
-
     const data = [
         {
             id: 1,
@@ -25,7 +24,7 @@ const PHONELIST: FC = () => {
     ]
 
     return (
-        <div id='node' className={styles.phone_list} >
+        <div className={styles.phone_list}>
             {data.map((value: any) => {
                 return (
                     <div className={styles.phone_list_container} key={value.id}>

@@ -12,11 +12,16 @@ interface basketTypes {
     basket_products: Array<{ id: number, product: { id: number, title: string, price: number } }>
 }
 
-const BASKET: FC = () => {
+const BASKET: FC = (): any => {
     const data: Array<basketTypes> = FETCH.GET(`${import.meta.env.VITE_URL}/basket`);
 
-    const productLength: number = data[0]?.basket_products.length;
-    const productPrice: number = data[0]?.basket_products
+    if (data[0] == undefined) {
+        return;
+    }
+
+    const productLength: number = data[0].basket_products.length;
+
+    const productPrice: number = data[0].basket_products
         .reduce((accumulator, currentValue) => accumulator + currentValue.product.price, 0);
 
 
